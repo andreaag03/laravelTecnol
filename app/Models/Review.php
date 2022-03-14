@@ -15,4 +15,19 @@ class Review extends Model
     protected $fillable = [
         'comment', 'user_id', 'product_id'
     ];
+
+    /**
+    * Get the product where the review is located.
+    */
+    function product(){
+        return $this->belongsTo(Product::class);
+    }
+
+    /**
+    * Get the user who writes the review.
+    */
+    function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
