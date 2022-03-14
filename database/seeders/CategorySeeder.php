@@ -4,11 +4,12 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use App\Models\Category;
 use App\Models\Review;
+use App\Models\Product;
+use App\Models\User;
 
-class UserSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,10 +18,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-         User::factory()->create(); 
+        //Create three categories.
+        Category::factory()->count(3)->create(); 
     }
-        
-
-        
-    
 }

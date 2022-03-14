@@ -6,6 +6,6 @@
     "\\database",
     "\\database\\seeders"
   ],
-  "SelectedNode": "\\database\\seeders\\DatabaseSeeder.php",
+  "SelectedNode": "\\database\\seeders\\CategorySeeder.php",
   "PreviewInSolutionExplorer": false
 }
