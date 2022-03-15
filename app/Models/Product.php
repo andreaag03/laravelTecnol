@@ -17,7 +17,7 @@ class Product extends Model
     ];
 
     /**
-    * Get the reviews from the recipe.
+    * Get the reviews from the product.
     */
     function reviews(){
         return $this->hasMany(Review::class);

@@ -27,7 +27,7 @@ class CategoryFactory extends Factory
     {
 
         return [
-            'title' => $this->faker->randomElement(['Categoria A', 'Categoria B', 'Categoria C']),
+            'title' => $this->faker->word,
             'image' => $this->faker->image(storage_path('images'), 200, 200, null, false), 
             'description' => $this->faker->sentence(rand(6, 10)),
         ];
