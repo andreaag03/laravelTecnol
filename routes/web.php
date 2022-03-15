@@ -16,12 +16,8 @@ use App\Http\Controllers\ReviewController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //Categories
-Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/createcategories',[CategoryController::class, 'create'])->name('category.create');
 Route::post('/storecategories',[CategoryController::class, 'store'])->name('category.store');
 Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('category.show');
