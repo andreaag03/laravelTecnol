@@ -41,6 +41,11 @@ Route::delete('/products',[ProductController::class, 'delete'])->name('product.d
 Route::post('/reviews',[ReviewController::class, 'store'])->name('review.create');
 Route::delete('/reviews',[ReviewController::class, 'delete'])->name('review.delete');
 
+//APIs
+Route::get('/apiCategories/{id}', [CategoryController::class, 'getProducts']);
+Route::get('/apiUsers/{reviewId}', [ReviewController::class, 'getUserName']);
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

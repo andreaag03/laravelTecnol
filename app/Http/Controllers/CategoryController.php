@@ -140,7 +140,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         
         if (!isset($category)) {
-            echo 'This id doesn\'t exist in the database';
+            echo 'This id doesn\'t exist in the database.';
             die;
         }
 
