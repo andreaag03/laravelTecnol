@@ -29,4 +29,17 @@ class ReviewController extends Controller
         Review::destroy($id);
         return redirect()->route('product.show',['id'=>$request->input('product_id')]);
     }
+
+    public function getUserName($reviewId)
+    {
+        $review = Review::find($reviewId);
+
+        if(!isset($review)) {
+            echo 'This id doesn\'t exist in the database.';
+            die;
+        }
+
+        echo $review->user->username;
+        die;
+    }
 }
