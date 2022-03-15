@@ -128,7 +128,41 @@ class CategoryController extends Controller
         Category::destroy($id);
         return redirect()->route('category.index');
     }
-    
 
-    
+    /**
+     * 
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function getProducts($id)
+    {
+        $category = Category::find($id);
+        
+        if (!isset($category)) {
+            echo 'This id doesn\'t exist in the database';
+            die;
+        }
+
+        $arrayInfo = [];
+        foreach($category->products as $product) {
+            
+            foreach ($product->reviews as $review) {
+                $arrayReviews[] = [
+                    'id' => $review->id,
+                    'comment' => $review->comment,
+                ];
+            }
+
+            $arrayInfo[] = [
+                'id'   => $product->id,
+                'name' => $product->name,
+                'description' => $product->description,
+                'price' => $product->price,
+                'reviews' => $arrayReviews
+            ];
+        }
+
+        echo json_encode($arrayInfo);
+    }        
 }
